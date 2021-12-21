@@ -1,5 +1,5 @@
 # selenium-capability-test
-This is a test for Selenium 4 to show, that desired capabilities (browser version) are not working.
+This is a test for Selenium 4 to show, that desired capabilities (browser version) are not working as expected.
 
 How to test:
 
