@@ -10,6 +10,8 @@ public class NodeSelectTest {
 
   private final static String HUB_URL = "http://localhost:4444/wd/hub";
   private final static String BROWSER_VERSION = "94.0.4606.81";
+  // Use below line to run on Selenium 3
+  // private final static String BROWSER_VERSION = "94.0.4606.61"; 
 
   @RepeatedTest(5)
   public void testNodeSelect() throws MalformedURLException {
