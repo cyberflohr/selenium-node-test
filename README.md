@@ -1,4 +1,4 @@
-# selenium-capability-test
+# selenium-node-test
 This is a test for Selenium 4 to show slow remote webdriver creation.
 
 Test with Selenium 4.1:
