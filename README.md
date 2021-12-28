@@ -1,13 +1,19 @@
 # selenium-capability-test
-This is a test for Selenium 4 to show, that desired capabilities (browser version) are not working as expected.
+This is a test for Selenium 4 to show slow remote webdriver creation.
 
-How to test:
+Test with Selenium 4.1:
 
     1. docker-compose up -d 
     2. mvn test
 
-Docker-compose up -d will create a Selenium 4 Hub and two Chrome nodes (v96.0 and v94.0).
-The maven test will use the RemoteWebDriver to create a Chrome session (v94.0).
-Unfortunately, the Test fails multiple times, because the returned browser version is  
-not equal to the requested browser version. Selenium is doing a round-robin for the chrome nodes,
-instead of returning the requested version.
+Test with Selenium 3.1:
+    
+    1. docker-compose -f docker-compose-3.1.yml up -d
+    2. mvn test
+
+Docker-compose up -d will create a Selenium 4 Hub and one Chrome nodes (v94.0).
+The maven test will use the RemoteWebDriver to create a Chrome session.
+The test will make 5 iterations, each iteration will create a new session.
+On my computer the test takes about 5-7 seconds per iteration.
+
+Running the same test with selenium 3 will take about 1-2 seconds per iteration.

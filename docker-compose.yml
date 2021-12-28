@@ -5,20 +5,10 @@ services:
     image: selenium/hub:4.1.1
     ports:
       - "4444:4444"
-#    environment:
+    environment:
+      SE_OPTS: "--reject-unsupported-caps true"
 
   chrome:
-    image: selenium/node-chrome:96.0
-    depends_on:
-      - hub
-    environment:
-      SE_EVENT_BUS_HOST: hub
-      SE_EVENT_BUS_PUBLISH_PORT: 4442
-      SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
-      SE_NODE_MAX_SESSIONS: 1
-      SE_NODE_SESSION_TIMEOUT: 60
-
-  chrome2:
     image: selenium/node-chrome:94.0
     depends_on:
       - hub
@@ -26,5 +16,5 @@ services:
       SE_EVENT_BUS_HOST: hub
       SE_EVENT_BUS_PUBLISH_PORT: 4442
       SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
-      SE_NODE_MAX_SESSIONS: 1
+      SE_NODE_MAX_SESSIONS: 5
       SE_NODE_SESSION_TIMEOUT: 60
